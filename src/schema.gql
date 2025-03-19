@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProductDimensions {
+  depth: Float!
+  height: Float!
+  width: Float!
+}
+
+type ProductDto {
+  availabilityStatus: String!
+  brand: String
+  category: String!
+  description: String!
+  dimensions: ProductDimensions!
+  discountPercentage: Float!
+  id: Int!
+  images: [String!]!
+  meta: ProductMeta!
+  minimumOrderQuantity: Int!
+  price: Float!
+  rating: Float!
+  returnPolicy: String!
+  reviews: [ReviewsProduct!]!
+  shippingInformation: String!
+  sku: String!
+  stock: Int!
+  tags: [String!]!
+  thumbnail: String!
+  title: String!
+  warrantyInformation: String!
+  weight: Float!
+}
+
+type ProductMeta {
+  barcode: String!
+  createdAt: String!
+  qrCode: String!
+  updatedAt: String!
+}
+
+type Query {
+  product(id: Float!): ProductDto!
+  products: [ProductDto!]!
+  searchProducts(query: String!): [ProductDto!]!
+}
+
+type ReviewsProduct {
+  comment: String!
+  date: String!
+  rating: Int!
+  reviewerEmail: String!
+  reviewerName: String!
+}
